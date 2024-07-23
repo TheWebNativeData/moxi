@@ -13,7 +13,7 @@ Hereby data is
 * further processed with standard tooling or
 * exported in standard formats.
 
-This enables distributed management of **meta-data** and **master-data** in a well-known environment without the need of central tooling or installation of client applications that needs to be trusted.
+This enables distributed management of **meta-data** and **primary-data** in a well-known environment without the need of central tooling or installation of client applications that needs to be trusted.
 This allows to work with different audiences that are used to work with source code management.
 With the flexibility to handle different file formats also IT-professionals can be targeted.
 
