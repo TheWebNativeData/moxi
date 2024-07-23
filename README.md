@@ -115,6 +115,6 @@ Hereby we have repository and format specific solutions:
 
 ## Core-Team
 
-* @starkeeny
-* @Creat1v
-* @cchriso
+* [@starkeeny](https://www.github.com/starkeeny)
+* [@Creat1v](https://www.github.com/Creat1v)
+* [@cchriso](https://www.github.com/cchriso)
