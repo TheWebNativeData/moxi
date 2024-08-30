@@ -113,6 +113,18 @@ Hereby we have repository and format specific solutions:
 
 * the UI can be used to view the cache and to configure the system
 
+## Example DataSource
+
+An example data source can be find in the [data](https://github.com/TheWebNativeData/architecture/tree/main/data) folder and related [history](https://github.com/TheWebNativeData/architecture/commits/main/data?since=2024-08-30&until=2024-08-30&author=starkeeny).
+
+```json
+{
+  "data": 1
+}
+```
+
+The 5 commits as seen in the [history](https://github.com/TheWebNativeData/architecture/commits/main/data?since=2024-08-30&until=2024-08-30&author=starkeeny) increment the data attribute from version to version by 1 changing data step by step from 1 to 5.
+
 ## Core-Team
 
 * [@starkeeny](https://www.github.com/starkeeny)
