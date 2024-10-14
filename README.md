@@ -1,4 +1,5 @@
-# Architecture View
+# MOXI
+**M**anaged **O**nline e**X**change of **I**nformation
 
 ## Introduction
 
