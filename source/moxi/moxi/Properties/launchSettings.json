@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "moxi": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
