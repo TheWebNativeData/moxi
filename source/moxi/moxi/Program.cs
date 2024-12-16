@@ -1,11 +1,15 @@
-﻿namespace Moxi;
+﻿// <copyright file="Program.cs" company="TheWebNativeData">
+// Copyright (c) TheWebNativeData. All Rights Reserved. Licensed under the MIT License. See LICENSE in the project root for license information.
+// </copyright>
+
+namespace Moxi;
 
 using System.Diagnostics.CodeAnalysis;
 
 /// <summary>
 /// Entry point class.
 /// </summary>
-public class Program
+public static class Program
 {
     /// <summary>
     /// Program entry point method.
