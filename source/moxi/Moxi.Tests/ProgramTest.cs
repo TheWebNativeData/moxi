@@ -1,7 +1,6 @@
-﻿using Microsoft.VisualStudio.TestPlatform.TestHost;
-using System.Text;
+﻿namespace Moxi.Tests;
 
-namespace Moxi.Tests;
+using System.Text;
 
 [TestClass]
 public sealed class ProgramTest

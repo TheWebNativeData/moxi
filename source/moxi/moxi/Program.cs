@@ -1,6 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿namespace Moxi;
 
-namespace Moxi;
+using System.Diagnostics.CodeAnalysis;
 
 /// <summary>
 /// Entry point class.
@@ -19,7 +19,7 @@ public class Program
     /// <summary>
     /// Program logic.
     /// </summary>
-    /// <param name="consoleOut"></param>
+    /// <param name="consoleOut">Text writer.</param>
     public static void MainOut(TextWriter consoleOut)
     {
         consoleOut.WriteLine("Hello, World!");
