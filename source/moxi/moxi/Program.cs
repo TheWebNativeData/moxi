@@ -1,4 +1,4 @@
-﻿namespace moxi
+﻿namespace Moxi
 {
     internal class Program
     {
