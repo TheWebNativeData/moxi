@@ -44,7 +44,7 @@ jobs:
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
       - name: Restore dependencies
-        run: dotnet restore source\sinus.sln -v:n
+        run: dotnet restore source\moxi\moxi.sln -v:n
       - name: Debug-ShowDir-PreBuild
         shell: powershell
         run: Get-ChildItem .
