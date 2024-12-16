@@ -49,10 +49,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"TheWebNativeData_moxi" /o:"thewebnativedata" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          cd ./source/moxi
+          cd .\source\moxi
+          ..\..\.sonar\scanner\dotnet-sonarscanner begin /k:"TheWebNativeData_moxi" /o:"thewebnativedata" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build --no-incremental
           dotnet test --collect "Code Coverage"
-          cd ../..
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-          Get-ChildItem -Recurse
+          ..\..\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
