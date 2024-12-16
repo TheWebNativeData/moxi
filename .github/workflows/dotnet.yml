@@ -49,8 +49,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          cd .\source\moxi
-          ..\..\.sonar\scanner\dotnet-sonarscanner begin /k:"TheWebNativeData_moxi" /o:"thewebnativedata" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build --no-incremental
-          dotnet test --collect "Code Coverage"
-          ..\..\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"TheWebNativeData_moxi" /o:"thewebnativedata" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet build --configuration DEBUG --no-incremental .\source\moxi\moxi.sln -v:n
+          dotnet test .\source\moxi\moxi.sln --no-build --no-restore --collect:"XPlat Code Coverage;Format=json,lcov,cobertura,opencover" --results-directory TestResults/ --logger "trx;LogFileName=coverage.trx" --logger:"console;verbosity=detailed"  --filter "TestCategory!=noCI"
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
