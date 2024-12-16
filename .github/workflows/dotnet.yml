@@ -43,6 +43,11 @@ jobs:
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+      - name: Restore dependencies
+        run: dotnet restore source\sinus.sln -v:n
+      - name: Debug-ShowDir-PreBuild
+        shell: powershell
+        run: Get-ChildItem .
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
@@ -50,6 +55,11 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"TheWebNativeData_moxi" /o:"thewebnativedata" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build --configuration DEBUG --no-incremental .\source\moxi\moxi.sln -v:n
-          dotnet test .\source\moxi\moxi.sln --no-build --no-restore --collect:"XPlat Code Coverage;Format=json,lcov,cobertura,opencover" --results-directory TestResults/ --logger "trx;LogFileName=coverage.trx" --logger:"console;verbosity=detailed"  --filter "TestCategory!=noCI"
+          dotnet build --configuration DEBUG --no-restore --no-incremental .\source\moxi\moxi.sln -v:n
+          dotnet test .\source\moxi\moxi.sln --no-restore --no-build --no-restore --collect:"XPlat Code Coverage;Format=json,lcov,cobertura,opencover" --results-directory TestResults/ --logger "trx;LogFileName=coverage.trx" --logger:"console;verbosity=detailed"  --filter "TestCategory!=noCI"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+      - name: Debug-ShowDir-PostBuild
+        shell: powershell
+        run: |
+          Get-ChildItem .
+          Get-ChildItem TestResults
