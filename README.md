@@ -1,5 +1,8 @@
 # MOXI
+
 **M**anaged **O**nline e**X**change of **I**nformation
+
+![Logo](./Logo/Logo_256.png)
 
 ## Introduction
 
